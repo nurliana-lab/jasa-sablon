@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Sablon - Cahaya</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Tambahkan ini kalau belum ada di style.css */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Cahaya Sablon</h1>
+        <p>Kerja Cepat & Maksimal</p>
+        <a href="login.html" class="login-btn" id="loginButton">Login</a>
+        <button id="logoutButton" class="login-btn" style="display: none;">Logout</button>
+    </header>
+    
+    <section class="about">
+        <div class="about-content">
+            <h2>Beranda</h2>
+            <p>Cetak Kaos, Mug dan Banner dengan Kualitas Terbaik!!</p>
+            <p>Harga mulai dari Rp 50.000. Pesan sekarang dan dapatkan diskon 10% untuk pesanan pertama!</p>
+        </div>
+    </section>
+
+
+    <!-- Bagian berikut hanya muncul setelah login -->
+    <section class="layanan">
+        <h2>Layanan Kami</h2>
+        <div>
+            <div>
+                <h3>Sablon Kaos</h3>
+                <p>Cetak kaos custom dengan desain Anda. Bahan berkualitas, tahan lama.
+                    Harga: Rp 50.000 - Rp 100.000 per pcs</p>
+            </div>
+            <div>
+                <h3>Sablon Mug</h3>
+                <p>Mug cantik untuk hadiah atau promosi. Pilihan warna dan ukuran.
+                    Harga: Rp 30.000 - Rp 60.000 per pcs</p>
+            </div>
+            <div>
+                <h3>Sablon Banner</h3>
+                <p>Banner besar untuk acara atau bisnis. Ukuran custom.
+                    Harga: Rp 200.000 - Rp 500.000 per meter</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="galeri">
+        <h2>Galeri Produk</h2>
+        <div class="galeri-produk">
+            <div class="galeri-item">
+                <img src="/gambar/sablon kaos.jpg" alt="Kaos Sablon">
+                <p>Kaos Sablon</p>
+            </div>
+            <div class="galeri-item">
+                <img src="/gambar/mug sablon.jpg" alt="Mug Sablon">
+                <p>Mug Sablon</p>
+            </div>
+            <div class="galeri-item">
+                <img src="/gambar/banner sablon.jpg" alt="Banner Sablon">
+                <p>Banner Sablon</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="Contact">
+        <h2>Hubungi Kami</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Nama Anda" required>
+            <input type="email" placeholder="Email Anda" required>
+            <textarea rows="5" placeholder="Pesan atau Detail Pesanan" required></textarea>
+            <button type="submit">Kirim Pesan</button>
+        </form>
+    </section>
+
+    <footer>
+        © 2023 Jasa Sablon Murah. Semua hak dilindungi. | 
+        Kontak: WA 08123456789 | 
+        Email: <a href="mailto:info@sablonmurah.com">info@sablonmurah.com</a>
+    </footer>
+
+    <script>
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        const loginButton = document.getElementById('loginButton');
+        const logoutButton = document.getElementById('logoutButton');
+
+        // Elemen yang akan disembunyikan sebelum login
+        const protectedSections = document.querySelectorAll(
+            '.layanan, .galeri, .Contact, footer'
+        );
+
+        if (isLoggedIn) {
+            // Jika sudah login → tampilkan semuanya
+            protectedSections.forEach(sec => sec.classList.remove('hidden'));
+            loginButton.style.display = 'none';
+            logoutButton.style.display = 'inline-block';
+        } else {
+            // Jika belum login → sembunyikan semuanya
+            protectedSections.forEach(sec => sec.classList.add('hidden'));
+            loginButton.style.display = 'inline-block';
+            logoutButton.style.display = 'none';
+        }
+
+        // Tombol logout
+        logoutButton.addEventListener('click', () => {
+            localStorage.setItem('isLoggedIn', 'false');
+            alert('Anda telah logout.');
+            location.reload();
+        });
+    </script>
+
+</body>
+</html>

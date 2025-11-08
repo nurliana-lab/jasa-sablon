@@ -1,0 +1,322 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* ======= SECTION: ABOUT ======= */
+.about {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: white;
+}
+
+.about h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 600px;
+    margin: 10px auto;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* ======= SECTION: LAYANAN ======= */
+.layanan {
+    background-color: #f0f8ff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.layanan h2 {
+    color: #007bff;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.layanan > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.layanan div div {
+    background: white;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.layanan div div:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.layanan h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* ======= GALERI ======= */
+.galeri {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.galeri h2 {
+    color: #007bff;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.galeri-produk {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.galeri-item {
+    text-align: center;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 220px;
+}
+
+.galeri-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.galeri-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* ======= HUBUNGI KAMI ======= */
+.Contact {
+    background-color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.Contact h2 {
+    color: #007bff;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #f7f7f7;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+    outline: none;
+}
+
+.contact-form button {
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.contact-form button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #0062cc, #00a6e0);
+}
+
+/* ======= FOOTER ======= */
+footer {
+    background: #222;
+    color: #ddd;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ======= LOGIN ======= */
+.login-btn {
+
+    .hidden {
+    display: none;
+}
+    display: inline-block;
+    margin-top: 15px;
+    background: white;
+    color: #007bff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #f0f8ff;
+    transform: scale(1.05);
+}
+
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 768px) {
+    .layanan > div, .galeri-produk {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+    }
+}
+
+/* === BAGIAN BERANDA (ABOUT SECTION) === */
+.about {
+    position: relative;
+    height: 100vh; /* memenuhi tinggi layar */
+    background: url('gambar/background.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;     /* posisi vertikal tengah */
+    justify-content: center; /* posisi horizontal tengah */
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Lapisan gelap agar teks tetap terbaca */
+.about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55); /* lebih gelap agar teks kontras */
+    z-index: 0;
+}
+
+/* Kontainer teks */
+.about-content {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.35); /* sedikit transparan untuk memperjelas teks */
+    border-radius: 12px;
+    backdrop-filter: blur(5px); /* efek kaca lembut */
+    animation: fadeIn 1.2s ease;
+}
+
+/* Judul besar di tengah */
+.about h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Paragraf */
+.about p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    color: #f0f0f0;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Efek animasi lembut muncul */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsif di layar kecil */
+@media (max-width: 768px) {
+    .about h2 {
+        font-size: 2.2rem;
+    }
+    .about p {
+        font-size: 1rem;
+    }
+}
+
